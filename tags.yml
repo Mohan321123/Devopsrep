@@ -1,0 +1,22 @@
+---
+- name: tagging the plays
+  hosts: node1
+  tasks:
+    - name: tag name package
+      yum:
+       name: httpd
+       state: present
+      tags:
+       - web
+    - name: wget name package
+      yum:
+       name: wget
+       state: present
+      tags:
+       - package
+    - name: install ntp
+      yum:
+       name: ntp
+       state: present
+      tags:
+       - package
